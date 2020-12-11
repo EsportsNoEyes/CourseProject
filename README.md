@@ -8,7 +8,7 @@ Use command `python3 prediction.py` to generate the prediction results which is 
 If there is any errors with nltk package when running the code, please try to install suggested additional dependencies to solve the issue. We also welcome our reviewers to schedule a live demo.
 
 ## Description of Algorithm
-As we planned in the project proposal, the first method we tried is classifier that based on Naive Bayes. The equation to compute the probability is $\sum_{All words} log (P(Word|Label=SARCASM)) $.
+As we planned in the project proposal, the first method we tried is classifier that based on Naive Bayes. The equation to compute the probability is ![eq1](https://github.com/EsportsNoEyes/CourseProject/blob/main/eq1.svg)/
 
 We used Laplace smoothing when we calculate the probability of every single key in the "SARCASM" and "NOT\_SARCASM" dictionary. The equation for calculating the probability is $ P(UNK|D)=\frac{\alpha}{n+\alpha(V+1)}$ and $ P(W|D)=\frac{count(W)+\alpha}{n+\alpha(V+1)}$. UNK stands for the words that we have not seen in the training data. D stands for the dictionary we used when we calculate the probability of its words. It can be either "SARCASM" dictionary or "NOT\_SARCASM" dictionary. $\alpha$ stnads for the laplace smoothing parameter we set before training, default to be 1.0. $V$ stands for the size of the corresponding dictionary.
 
